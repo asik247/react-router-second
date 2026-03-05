@@ -13,19 +13,19 @@ const Navbar = () => {
                         tabIndex="-1"
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow gap-4">
                         <NavLink to={'/'}>Home</NavLink>
-                        <NavLink to={''}>About</NavLink>
-                        <NavLink to={''}>Profile</NavLink>
-                        <NavLink to={''}>Contact</NavLink>
+                        <NavLink to={'about'}>About</NavLink>
+                        <NavLink to={'users'}>Users</NavLink>
+                        <NavLink to={'login'}>Login</NavLink>
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">React</a>
+                <a className="font-bold text-2xl cursor-pointer">React</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 gap-4">
                     <NavLink to={'/'}>Home</NavLink>
-                    <NavLink to={''}>About</NavLink>
-                    <NavLink to={''}>Profile</NavLink>
-                    <NavLink to={''}>Contact</NavLink>
+                    <NavLink to={'about'}>About</NavLink>
+                    <NavLink to={'users'}>Users</NavLink>
+                    <NavLink to={'login'}>Login</NavLink>
                 </ul>
             </div>
             <div className="navbar-end">
