@@ -15,11 +15,17 @@ const router = createBrowserRouter([
     path: "/",
     Component: Root,
     children: [
-      { index: true, Component:Hero},
-      {path:'about',Component:About},
-      {path:'users',Component:Users},
-      {path:'login',Component:Login},
-      
+      { index: true, Component: Hero },
+      { path: 'about', Component: About },
+      { path: 'login', Component: Login },
+
+      {
+        path: 'users',
+        loader:()=>fetch("https://jsonplaceholder.typicode.com/users"),
+        Component: Users
+      },
+
+
     ]
   }
 ])
