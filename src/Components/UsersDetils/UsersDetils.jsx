@@ -21,6 +21,8 @@ const UsersDetils = () => {
     const { street, suite, city, zipcode } = address;
     const { name: companyName, catchPhrase } = company;
 
+    // use Location here now;
+
     return (
         <div className="flex justify-center items-center min-h-screen  bg-gray-100">
 

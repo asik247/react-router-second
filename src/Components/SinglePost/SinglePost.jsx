@@ -1,6 +1,6 @@
 import React, { Suspense, useState } from 'react';
-import { Link } from 'react-router';
 import PostDetails from '../PostDetails/PostDetails';
+import { Navigate } from 'react-router';
 
 const SinglePost = ({ d }) => {
 
@@ -9,6 +9,8 @@ const SinglePost = ({ d }) => {
     const postPromise = fetch(`https://jsonplaceholder.typicode.com/users/${id}`).then(res => res.json())
     // useStae code start here;
     const [toggle, setToggle] = useState(false)
+    // useStae use for back home page conditionlay;
+    const [visitHome, setVisitHome] = useState(false);
 
     return (
         <div className="max-w-md mx-auto bg-white shadow-lg rounded-2xl p-6 border hover:shadow-2xl transition">
@@ -30,13 +32,14 @@ const SinglePost = ({ d }) => {
                 <button onClick={() => setToggle(!toggle)} className='btn btn-secondary'> {toggle ? "Hide" : "Show"} Info</button>
 
 
+                {/* bck home conditionlay useing navgate funk */}
+                <button onClick={() => setVisitHome(true)} className='btn btn-primary'>Home</button>
 
 
-                <Link>
-                    <button className='btn btn-primary'>Home</button>
-
-                </Link>
             </div>
+            {
+                visitHome && <Navigate to={'/'}></Navigate>
+            }
             {
                 toggle && <Suspense fallback={<h1>Loadding..</h1>}>
                     <PostDetails postPromise={postPromise}></PostDetails>
