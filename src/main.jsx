@@ -10,6 +10,7 @@ import Users from './Components/Users/Users.jsx'
 import Login from './Components/Loing/Login.jsx'
 import UsersDetils from './Components/UsersDetils/UsersDetils.jsx'
 import Post from './Components/Post/Post.jsx'
+import PageNotFound from './Components/PageNotFound/PageNotFound.jsx'
 
 // router code start here;
 const router = createBrowserRouter([
@@ -35,6 +36,9 @@ const router = createBrowserRouter([
         path:'post',
         loader:()=>fetch("https://jsonplaceholder.typicode.com/posts"),
         Component:Post
+      },{
+        path:'*',
+        Component:PageNotFound
       }
 
 

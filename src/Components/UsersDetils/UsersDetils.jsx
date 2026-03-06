@@ -1,10 +1,13 @@
 import React from 'react';
-import { Link, useLoaderData, useNavigate } from 'react-router';
+import { Link, useLoaderData, useNavigate, useParams } from 'react-router';
 
 const UsersDetils = () => {
     // use navgation code start here;
     const navagite = useNavigate()
     // const isNavgite = navagite(-1)
+     // use param koi thake data aslo oii ta ber kore show kore;
+    const params = useParams();
+    console.log(params);
 
     const userDetailsData = useLoaderData();
 
@@ -21,7 +24,7 @@ const UsersDetils = () => {
     const { street, suite, city, zipcode } = address;
     const { name: companyName, catchPhrase } = company;
 
-    // use Location here now;
+   
 
     return (
         <div className="flex justify-center items-center min-h-screen  bg-gray-100">

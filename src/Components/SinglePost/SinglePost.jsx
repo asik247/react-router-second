@@ -1,16 +1,22 @@
-import React, { Suspense, useState } from 'react';
+import React, { Suspense,  useState } from 'react';
 import PostDetails from '../PostDetails/PostDetails';
-import { Navigate } from 'react-router';
+import { Navigate, useLocation } from 'react-router';
 
 const SinglePost = ({ d }) => {
+    
+   
+
 
     const { userId, id, title, body } = d;
     // old way fetch code start here;
-    const postPromise = fetch(`https://jsonplaceholder.typicode.com/users/${id}`).then(res => res.json())
+    const postPromise = fetch(`https://jsonplaceholder.typicode.com/posts/${id}`).then(res => res.json())
     // useStae code start here;
     const [toggle, setToggle] = useState(false)
     // useStae use for back home page conditionlay;
     const [visitHome, setVisitHome] = useState(false);
+    // user location jsut clg code here ;
+    const location = useLocation();
+    console.log(location);
 
     return (
         <div className="max-w-md mx-auto bg-white shadow-lg rounded-2xl p-6 border hover:shadow-2xl transition">
@@ -37,13 +43,14 @@ const SinglePost = ({ d }) => {
 
 
             </div>
-            {
-                visitHome && <Navigate to={'/'}></Navigate>
-            }
+
             {
                 toggle && <Suspense fallback={<h1>Loadding..</h1>}>
                     <PostDetails postPromise={postPromise}></PostDetails>
                 </Suspense>
+            }
+            {
+                visitHome && <Navigate to={'/'}></Navigate>
             }
 
         </div>
