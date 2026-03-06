@@ -27,7 +27,7 @@ const User = ({ data }) => {
                 <p>{data.company.name}</p>
                 <p className="text-sm text-gray-600">{data.company.catchPhrase}</p>
             </div> */}
-            <div>
+            <div className='flex justify-center items-center m-4'>
                 
                 <Link to={`/users/${data.id}`}>
                     <button className='btn btn-primary '>View Details</button>
