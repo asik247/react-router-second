@@ -8,6 +8,7 @@ import About from './Components/About/About.jsx'
 import Hero from './Components/HeroArea/Hero.jsx'
 import Users from './Components/Users/Users.jsx'
 import Login from './Components/Loing/Login.jsx'
+import UsersDetils from './Components/UsersDetils/UsersDetils.jsx'
 
 // router code start here;
 const router = createBrowserRouter([
@@ -23,6 +24,11 @@ const router = createBrowserRouter([
         path: 'users',
         loader:()=>fetch("https://jsonplaceholder.typicode.com/users"),
         Component: Users
+      },
+      {
+        path: 'users/:id',
+        loader:({params})=>fetch(`https://jsonplaceholder.typicode.com/users/${params.id}`),
+        Component: UsersDetils
       },
 
 

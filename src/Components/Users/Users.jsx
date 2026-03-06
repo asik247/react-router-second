@@ -9,7 +9,7 @@ const Users = () => {
         <div>
            <div className='grid grid-cols-3 gap-4 w-11/12 mx-auto m-20'>
             {
-                usersData.map(data=><User data={data}></User>)
+                usersData.map(data=><User key={data.id} data={data}></User>)
             }
            </div>
         </div>

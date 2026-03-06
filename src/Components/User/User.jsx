@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const User = ({ data }) => {
     return (
@@ -21,10 +22,16 @@ const User = ({ data }) => {
                 <p>{data.address.city} - {data.address.zipcode}</p>
             </div>
 
-            <div className="mt-4 p-3 bg-blue-50 rounded-lg">
+            {/* <div className="mt-4 p-3 bg-blue-50 rounded-lg">
                 <h2 className="font-semibold text-lg mb-1">Company</h2>
                 <p>{data.company.name}</p>
                 <p className="text-sm text-gray-600">{data.company.catchPhrase}</p>
+            </div> */}
+            <div>
+                
+                <Link to={`/users/${data.id}`}>
+                    <button className='btn btn-primary '>View Details</button>
+                </Link>
             </div>
 
         </div>

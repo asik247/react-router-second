@@ -16,6 +16,7 @@ const Navbar = () => {
                         <NavLink to={'about'}>About</NavLink>
                         <NavLink to={'users'}>Users</NavLink>
                         <NavLink to={'login'}>Login</NavLink>
+                        {/* <NavLink to={'login'}>Login</NavLink> */}
                     </ul>
                 </div>
                 <a className="font-bold text-2xl cursor-pointer">React</a>
